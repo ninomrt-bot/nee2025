@@ -1,0 +1,16 @@
+services:
+  backend_api:
+    build: ./backend_api          # <- dossier qui contient le Dockerfile
+    container_name: backend_api
+    restart: unless-stopped
+    ports:
+      - "5000:5000"               # API exposée sur le port 5000
+    env_file: .env                # variables Odoo + OPC-UA
+    networks: [indus_net]
+
+networks:
+  indus_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.30.0/24

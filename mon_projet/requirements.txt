@@ -1,0 +1,7 @@
+flask>=2.3
+python-dotenv>=1.0
+requests>=2.31           # utile si tu fais d’autres appels HTTP
+opcua>=0.98.13
+gunicorn>=21.2           # exécution en production
+pillow>=10.0
+pyserial>=3.5      # si tu utilises réellement /dev/ttyUSB0
